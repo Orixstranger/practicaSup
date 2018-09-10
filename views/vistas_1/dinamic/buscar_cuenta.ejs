@@ -1,0 +1,79 @@
+<div class="container">
+    <section class="col-md-12 content" id="home">
+        <div class="col-lg-6 col-md-6 content-item tm-black-translucent-bg tm-logo-box">
+            <i class="fa fa-snowflake-o fa-4x tm-logo"></i>
+            <h1 class="text-uppercase">Catalyst</h1>
+
+        </div>
+        
+        <form method="POST" action="/buscarUsuario">
+            <div class="col-lg-6 col-md-6 content-item content-item-1 background tm-white-translucent-bg">
+                <div class="form-group">
+                    <input id="cedula_buscar" class="cedula_buscar" name="cedula_buscar" type="text" placeholder="Ingrese cedula">
+                    <button type="button" name="btn_buscar" id="btn_buscar" ><i class="col-3 col-12-mobilep form-check form-check-inline fas fa-search" style="height: 40px;"></i>Buscar</button>
+
+                </div>
+                <div class="form-group">
+                    <label>Cedula: </label><input type="text" name="cedula_buscada" id="cedula_buscada"  placeholder="Cedula" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>Nombre: </label><input type="text" name="nombres_buscado" id="nombres_buscado"  placeholder="Nombres" maxlength="30" disabled/>
+                </div>
+                <div class="form-group">
+                    <label>Apellido: </label><input type="text" name="apellidos_buscados" id="apellidos_buscados" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>Usuario: </label><input type="text" name="usuario_buscado" id="usuario_buscado" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>Clave: </label><input type="text" name="clave_buscada" id="clave_buscada" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>External_id: </label><input type="text" name="external_buscado" id="external_buscado" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+            </div>
+        </form>
+    </section>
+
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    $("#btn_buscar").click(function () {
+        var html = "Ningun Dato que mostrar";
+        $.ajax({
+            type: "POST",
+            url: "/buscarUsuario",
+            data: "cedula=" + $("#cedula_buscar").val(),
+            success: function (data) {
+                html = "";
+                alert("Datos Encontrados!!!");
+                $('#cedula_buscar').val(data.cedula);
+                //recibe los datos de la lista persona creado en el metodo
+                //devuelve los datos con el res.send
+                //y esos datos son entregados a la variable data
+                //ahora el data
+                //llamas a cada variable de la tabla persona
+                //ejemple: data. cedula; data. nombres; data.pellidos
+                //y aqui entregas esos valores a cada variable creada $('#cedula_buscada')
+                //ejemplo: $('#cedula_buscada').val(data.cedula);
+                $('#cedula_buscada').val(data.persona.cedula);
+                $('#nombres_buscado').val(data.persona.nombres);
+                $('#apellidos_buscados').val(data.persona.apellidos);
+                $('#usuario_buscado').val(data.cuenta.usuario);
+                $('#clave_buscada').val(data.cuenta.clave);
+                $('#external_buscado').val(data.cuenta.external_id);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Datos no encontrados');
+                alert('NECESITA CREAR INFRACTOR!!');
+            }
+        });
+    });
+</script>
+

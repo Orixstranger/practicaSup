@@ -1,0 +1,33 @@
+<h1><%= h1 %></h1>
+<table>
+    <thead>
+        <tr>
+            <th>cedula</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>usuario</th>
+            <th>clave</th>
+            <th>external_id</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%for(var i=0; i < hola.length , i< hola2.length; i++){%>
+        <tr>
+            <td><%=hola[i].cedula%></td>
+            <td><%=hola[i].nombres%></td>
+            <td><%=hola[i].apellidos%></td>
+            <td><%=hola2[i].usuario%></td>
+            <td><%=hola2[i].clave%></td>
+            <td><%=hola2[i].external_id%></td>
+            
+                <script>
+                    
+                </script>
+            </td>
+        </tr>
+
+        <%}%>
+    </tbody>
+
+</table>

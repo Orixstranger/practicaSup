@@ -1,0 +1,59 @@
+<div class="container">
+    <section class="col-md-12 content" id="home">
+        <div class="col-lg-6 col-md-6 content-item tm-black-translucent-bg tm-logo-box">
+            <i class="fa fa-snowflake-o fa-4x tm-logo"></i>
+            <h1 class="text-uppercase">Catalyst</h1>
+
+        </div>
+        <form method="POST" action="/actualizar">
+            <div class="col-lg-6 col-md-6 content-item content-item-1 background tm-white-translucent-bg">
+                <div class="form-group">
+                    <input id="cedula_buscar" class="cedula_buscar" name="cedula_buscar" type="text" placeholder="Ingrese cedula">
+                    <button type="button" name="btn_buscar" id="btn_buscar" ><i class="col-3 col-12-mobilep form-check form-check-inline fas fa-search" style="height: 40px;"></i>Buscar</button>
+
+                </div>
+                <div class="form-group">
+                    <label>Cedula: </label><input name="cedula_editar" id="cedula_editar"  placeholder="Cedula" maxlength="30"/>
+                </div>
+                <div class="form-group">
+                    <label>Nombre: </label><input type="text" name="nombres_editar" id="nombres_editar"  placeholder="Nombres" maxlength="30" />
+                </div>
+                <div class="form-group">
+                    <label>Apellido: </label><input type="text" name="apellidos_editar" id="apellidos_editar" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>Usuario: </label><input type="text" name="usuario_editar" id="usuario_editar" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <label>Clave: </label><input type="text" name="clave_editar" id="clave_editar" value="" placeholder="Apellidos" maxlength="30" />
+                </div>
+                <div class="form-group">
+                    <label>External_id: </label><input type="text" name="external_editar" id="external_editar" value="" placeholder="Apellidos" maxlength="30" disabled />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+
+
+            </div>
+        </form>
+    </section>
+
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/buscar.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+    $(document).ready(function(){
+       buscar(); 
+    });
+</script>
+
+
+

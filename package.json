@@ -1,0 +1,26 @@
+{
+  "name": "sup-etorio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.9",
+    "ejs": "~2.5.7",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "http-errors": "^1.6.3",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.6.1",
+    "nib": "^1.1.2",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "sequelize": "^4.38.0",
+    "stylus": "^0.54.5",
+    "uuid": "^3.3.2"
+  }
+}
